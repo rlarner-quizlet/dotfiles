@@ -3,6 +3,7 @@ export PATH=$PATH:/Users/rosslarner/bin
 alias d='ssh dev.quizlet.com'
 alias f='yarn test:hhvm'
 alias j='yarn test:js'
+alias m='mysql -h 127.0.0.1 -uuser -ppassw0rd'
 
 # Git shortcuts
 # requires .gitconfig to have:
