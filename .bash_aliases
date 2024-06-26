@@ -4,6 +4,9 @@ alias d='ssh dev.quizlet.com'
 alias f='yarn test:hhvm'
 alias j='yarn test:js'
 alias m='mysql -h 127.0.0.1 -uuser -ppassw0rd'
+alias enums='yarn hh generate-enums-from-schema'
+alias models='yarn hh generate-models-from-schema'
+alias schema_patch='yarn hh batch ApplySchemaPatch --mysql'
 
 # Git shortcuts
 # requires .gitconfig to have:
