@@ -10,6 +10,7 @@ alias m='mysql -h 127.0.0.1 -uuser -ppassw0rd'
 alias models='yarn hh generate-models-from-schema'
 alias p='ping www.yahoo.com'
 alias schema_patch='yarn hh batch ApplySchemaPatch --mysql'
+alias gulp='yarn gulp build:config'
 
 # Git shortcuts
 # requires .gitconfig to have:
