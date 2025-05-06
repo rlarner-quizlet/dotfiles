@@ -11,6 +11,7 @@ alias models='yarn hh generate-models-from-schema'
 alias p='ping www.yahoo.com'
 alias schema_patch='yarn hh batch ApplySchemaPatch --mysql'
 alias gulp='yarn gulp build:config'
+alias timeout='gp timeout set 84600s'
 
 # Git shortcuts
 # requires .gitconfig to have:
