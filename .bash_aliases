@@ -17,3 +17,18 @@ alias timeout='gp timeout set 84600s'
 # requires .gitconfig to have:
 # recent-branches="for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/"
 recent() { PS3='select branch: '; select b in `git recent-branches $*` ; do echo \"switching to $b\"; git co $b; exit; done; };
+run_until_failure() {
+  local command_to_run="$@"
+  local attempt_count=1
+
+  echo "Running command until failure: '$command_to_run'"
+
+  while eval "$command_to_run"; do
+    echo "Command succeeded on attempt $attempt_count."
+    ((attempt_count++))
+    # Optional: Add a delay between successful runs
+    # sleep 1
+  done
+
+  echo "Command failed on attempt $attempt_count with exit code: $?."
+}
