@@ -12,6 +12,7 @@ alias p='ping www.yahoo.com'
 alias schema_patch='yarn hh batch ApplySchemaPatch --mysql'
 alias gulp='yarn gulp build:config'
 alias timeout='gp timeout set 84600s'
+alias restart_memcached='echo "If you’d like to clear data from memcached, open up the Data Services tab in Terminal, Ctrl-C the exisitng --follow command, and execute this command:"; echo "docker compose --file tooling/devenvs/services/docker-compose.yml restart memcached"'
 
 # Git shortcuts
 # requires .gitconfig to have:
