@@ -13,7 +13,7 @@ alias schema_patch='yarn hh batch ApplySchemaPatch --mysql'
 alias gulp='yarn gulp build:config'
 alias timeout='gp timeout set 84600s'
 alias restart_memcached='echo "If you’d like to clear data from memcached, open up the Data Services tab in Terminal, Ctrl-C the exisitng --follow command, and execute this command:"; echo "docker compose --file tooling/devenvs/services/docker-compose.yml restart memcached"'
-
+alias restart_renderer='npx pm2 restart all; npx pm2 logs dev-main-server'
 # Git shortcuts
 # requires .gitconfig to have:
 # recent-branches="for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/"
