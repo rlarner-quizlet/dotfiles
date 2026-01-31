@@ -16,6 +16,11 @@ alias restart_memcached='echo "If you’d like to clear data from memcached, ope
 alias restart_renderer='npx pm2 restart all; npx pm2 logs dev-main-server'
 alias clfd='brew install cloudflared; cloudflared tunnel --url http://localhost:8080'
 alias add_chatgpt_client='yarn hh-ctl batch GenerateChatGPTClientIdAndSecret --exec'
+alias install_ngrok='curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
+        sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && \
+        echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | \
+        sudo tee /etc/apt/sources.list.d/ngrok.list && \
+        sudo apt update && sudo apt install -y ngrok; ngrok authtoken "$NGROK_AUTH_TOKEN"'
 alias expose_web='ngrok http --url=https://quizlet-ross-web.ngrok.app http://localhost:8080'
 # Git shortcuts
 # requires .gitconfig to have:
