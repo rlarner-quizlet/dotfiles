@@ -14,7 +14,7 @@ alias timeout='gp timeout set 84600s'
 alias restart_memcached='echo "If you’d like to clear data from memcached, open up the Data Services tab in Terminal, Ctrl-C the exisitng --follow command, and execute this command:"; echo "docker compose --file tooling/devenvs/services/docker-compose.yml restart memcached"'
 alias restart_renderer='npx pm2 restart all; npx pm2 logs dev-main-server'
 alias clfd='brew install cloudflared; cloudflared tunnel --url http://localhost:8080'
-alias add_chatgpt_client='yarn hh-ctl batch GenerateChatGPTClientIdAndSecret --exec'
+alias add_chatgpt_client='yarn php-ctl batch GenerateChatGPTClientIdAndSecret --exec'
 alias install_ngrok='curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
         sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && \
         echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | \
