@@ -21,10 +21,6 @@ alias install_ngrok='curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
         sudo tee /etc/apt/sources.list.d/ngrok.list && \
         sudo apt update && sudo apt install -y ngrok; ngrok authtoken "$NGROK_AUTH_TOKEN"'
 alias expose_web='ngrok http --url=https://quizlet-ross-web.ngrok.app http://localhost:8080'
-# Git shortcuts
-# requires .gitconfig to have:
-# recent-branches="for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/"
-recent() { PS3='select branch: '; select b in `git recent-branches $*` ; do echo \"switching to $b\"; git co $b; exit; done; };
 run_until_failure() {
   local command_to_run="$@"
   local attempt_count=1
