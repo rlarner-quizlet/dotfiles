@@ -31,3 +31,4 @@ run_until_failure() {
 
   echo "Command failed on attempt $attempt_count with exit code: $?."
 }
+alias signadot_group='ROUTE_GROUP_LABEL=rg-quizlet-is-cool make signadot.apply'
