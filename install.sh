@@ -28,3 +28,15 @@ else
 fi
 
 echo "Done. Restart your shell or run: source $SHELL_RC"
+
+if command -v claude >/dev/null 2>&1; then
+  # Register the CircleCI MCP server at user scope (writes ~/.claude.json,
+  # which is per-workspace, which is why we re-run this on every start).
+  #
+  # NOTE: this assumes the CircleCI MCP server reads its token from
+  # CIRCLECI_API_KEY. If the official server expects a different env-var name
+  # (e.g. CIRCLECI_TOKEN), change the `--env` line accordingly.
+  claude mcp add circleci --scope user \
+    --env CIRCLECI_API_KEY="${CIRCLECI_API_KEY:-}" \
+    -- npx -y @circleci/mcp-server-circleci
+fi
