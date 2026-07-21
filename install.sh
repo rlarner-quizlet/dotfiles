@@ -40,3 +40,11 @@ if command -v claude >/dev/null 2>&1; then
     --env CIRCLECI_API_KEY="${CIRCLECI_API_KEY:-}" \
     -- npx -y @circleci/mcp-server-circleci
 fi
+
+if command -v claude >/dev/null 2>&1; then
+  # Register the Rollbar MCP server at user scope (writes ~/.claude.json,
+  # which is per-workspace, which is why we re-run this on every start).
+  claude mcp add rollbar --scope user \
+    --env ROLLBAR_ACCESS_TOKEN="${ROLLBAR_ACCESS_TOKEN:-}" \
+    -- npx -y @rollbar/mcp-server@latest
+fi
