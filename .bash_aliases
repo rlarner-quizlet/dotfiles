@@ -1,4 +1,4 @@
-export PATH=$PATH:/Users/rosslarner/bin
+# export PATH=$PATH:/Users/rosslarner/bin
 alias enums='phpctl batch generate-enums-from-schema'
 alias f='pnpm test:php'
 alias h='pnpm test:php'
